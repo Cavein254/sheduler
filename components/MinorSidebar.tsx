@@ -4,6 +4,7 @@ import { GoChevronDown, GoChevronRight } from "react-icons/go";
 import React, { useState } from "react";
 import { FaBookReader } from "react-icons/fa";
 import { FaEllipsis } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
 
 const AccordionItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +23,8 @@ const AccordionItem = ({ title, content }) => {
           <FaBookReader className="ml-2" />
           <h2 className="ml-2">{title}</h2>
         </div>
-        <div>
-          <FaEllipsis />
+        <div className="flex items-center">
+          <FaEllipsis /> <FaPlus className="ml-2" />
         </div>
       </div>
       {isOpen && (
