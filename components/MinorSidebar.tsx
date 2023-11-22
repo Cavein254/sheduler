@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { FaBookReader } from "react-icons/fa";
 import { FaEllipsis } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
+import MySearch from "./MySearch";
 
 const AccordionItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ const AccordionItem = ({ title, content }) => {
   };
   return (
     <div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center hover:bg-gray-100 px-2 rounded-md">
         <div
           className="flex items-center text-lg font-bold"
           onClick={toggleAccordion}
@@ -28,10 +29,10 @@ const AccordionItem = ({ title, content }) => {
         </div>
       </div>
       {isOpen && (
-        <div className="accordion-content">
+        <div className="">
           {content.map((item, idx) => {
             return (
-              <div key={idx} className="ml-4">
+              <div key={idx} className="ml-4 my-3">
                 {item}
               </div>
             );
@@ -44,7 +45,7 @@ const AccordionItem = ({ title, content }) => {
 
 const Accordion = ({ items }) => {
   return (
-    <div>
+    <div className="mt-4">
       {items.map((item, index) => (
         <AccordionItem key={index} title={item.title} content={item.content} />
       ))}
@@ -66,7 +67,8 @@ const MinorSidebar = () => {
   ];
 
   return (
-    <div className="w-1/6">
+    <div className="w-1/6 border-[1px] border-transparent border-r-gray-300 pt-4 px-4 h-[100vh]">
+      <MySearch />
       <Accordion items={accordionItems} />
     </div>
   );

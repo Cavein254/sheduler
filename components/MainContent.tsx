@@ -6,7 +6,7 @@ import { LuClipboardEdit } from "react-icons/lu";
 import MainTab from "./MainTab";
 const MainContent = () => {
   return (
-    <div className="w-4/6 px-4">
+    <div className="w-full px-4">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
           <div>
