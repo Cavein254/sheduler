@@ -67,7 +67,7 @@ const MinorSidebar = () => {
 
   return (
     <div className="w-1/6">
-      <Accordion items={accordionItems} />;
+      <Accordion items={accordionItems} />
     </div>
   );
 };

@@ -10,12 +10,10 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@material-tailwind/react": "^2.1.4",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^4.12.0",
-    "react-pro-sidebar": "^1.1.0-alpha.1"
+    "react-icons": "^4.12.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.5.6",
