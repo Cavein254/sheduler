@@ -6,7 +6,7 @@ import { LuClipboardEdit } from "react-icons/lu";
 import MainTab from "./MainTab";
 const MainContent = () => {
   return (
-    <div className="border-2 border-black w-4/6 px-4">
+    <div className="w-4/6 px-4">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
           <div>
@@ -32,7 +32,7 @@ const MainContent = () => {
             <span className="text-bold text-sm ml-[2px]">Santi Cazorla</span>
           </div>
         </div>
-        <div className="p-2 shadow-md">
+        <div className="p-2 shadow-md border-[1px] border-gray-200 rounded-md">
           <LuClipboardEdit className="text-2xl" />
         </div>
       </div>
