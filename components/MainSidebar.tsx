@@ -19,7 +19,9 @@ const MainSidebar = () => {
         </div>
       </div>
       <hr className="border-[1px] border-gray-300 mt-2 -mx-4" />
-      <MySearch />
+      <div className="">
+        <MySearch />
+      </div>
       <div className="mt-6 mx-4">
         <div className="flex items-center text-bold text-lg">
           <BsSearch /> <h5 className="ml-2">Dashboard</h5>

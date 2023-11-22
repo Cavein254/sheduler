@@ -5,7 +5,7 @@ const MySearch = () => {
   return (
     <div className="">
       <input
-        className="mt-2 relative rounded-md px-8 py-2 placeholder-bold focus:outline-none shadow-md"
+        className=" w-full mt-2  rounded-md px-8 py-2 placeholder-bold focus:outline-none shadow-md"
         placeholder="Search"
       />
       <BsSearch className="absolute -mt-7 text-lg ml-2" />

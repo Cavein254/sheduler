@@ -2,6 +2,8 @@
 import {} from "react-icons/md";
 import { GoChevronDown, GoChevronRight } from "react-icons/go";
 import React, { useState } from "react";
+import { FaBookReader } from "react-icons/fa";
+import { FaEllipsis } from "react-icons/fa6";
 
 const AccordionItem = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,21 +11,39 @@ const AccordionItem = ({ title, content }) => {
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
-
   return (
-    <div className="accordion-item">
-      <div className="accordion-header" onClick={toggleAccordion}>
-        <h2>{title}</h2>
-        <span>{isOpen ? <GoChevronDown /> : <GoChevronRight />}</span>
+    <div>
+      <div className="flex justify-between items-center">
+        <div
+          className="flex items-center text-lg font-bold"
+          onClick={toggleAccordion}
+        >
+          <span>{isOpen ? <GoChevronDown /> : <GoChevronRight />}</span>
+          <FaBookReader className="ml-2" />
+          <h2 className="ml-2">{title}</h2>
+        </div>
+        <div>
+          <FaEllipsis />
+        </div>
       </div>
-      {isOpen && <div className="accordion-content">{content}</div>}
+      {isOpen && (
+        <div className="accordion-content">
+          {content.map((item, idx) => {
+            return (
+              <div key={idx} className="ml-4">
+                {item}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
 
 const Accordion = ({ items }) => {
   return (
-    <div className="accordion">
+    <div>
       {items.map((item, index) => (
         <AccordionItem key={index} title={item.title} content={item.content} />
       ))}
@@ -33,11 +53,22 @@ const Accordion = ({ items }) => {
 
 const MinorSidebar = () => {
   const accordionItems = [
-    { title: "Section 1", content: "Content for Section 1" },
-    { title: "Section 2", content: "Content for Section 2" },
+    { title: "Section 1", content: ["Content for Section 1"] },
+    {
+      title: "Section 2",
+      content: [
+        "Content for Section 1",
+        "Content for Section 1",
+        "Content for Section 1",
+      ],
+    },
   ];
 
-  return <Accordion items={accordionItems} />;
+  return (
+    <div className="w-1/6 border-2 border-red-300">
+      <Accordion items={accordionItems} />;
+    </div>
+  );
 };
 
 export default MinorSidebar;
